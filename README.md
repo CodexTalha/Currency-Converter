@@ -2,6 +2,10 @@
 
 A simple, responsive currency converter built with **HTML, CSS, and JavaScript**. It uses live exchange-rate data to convert values between currencies.
 
+## 🌐 Live Demo
+
+[Open the Currency Converter](https://codextalha.github.io/Currency-Converter/)
+
 ## Features
 
 - Live currency conversion
@@ -71,7 +75,6 @@ This project helped me practice:
 - Show the exchange rate separately
 - Remember the last selected currencies
 - Add a conversion history
-- Deploy the project with GitHub Pages
 
 ## Author
 
