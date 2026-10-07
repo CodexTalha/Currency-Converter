@@ -3,52 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple currency converter built with HTML, CSS, and JavaScript using live exchange rates.">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
-   <div class="Container">
-    <h2>Currency Converter</h2>
-    <form>
-        <div class="amount">
-            <p>Amount: </p>
-            <input type="text" id="amount" placeholder="Enter Amount">
-        </div>
+    <main class="container">
+        <h1>Currency Converter</h1>
 
-        <div class="dropdown">
-            <div class="from">
-                <p>From: </p>
-                <div class="select-container">
-                    <img src="https://flagsapi.com/US/flat/64.png" alt="">
-                    <select name="from" id="">
-                       
-                    </select>
+        <form id="converter-form">
+            <div class="amount">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" min="0.01" step="any" value="1" placeholder="Enter amount" required>
+            </div>
+
+            <div class="dropdown">
+                <div class="from">
+                    <label for="from-currency">From</label>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/US/flat/64.png" alt="Selected source currency flag">
+                        <select name="from" id="from-currency" aria-label="Currency to convert from"></select>
+                    </div>
+                </div>
+
+                <button type="button" class="swap-btn" aria-label="Swap currencies" title="Swap currencies">
+                    <i class="fa-solid fa-arrow-right-arrow-left" aria-hidden="true"></i>
+                </button>
+
+                <div class="to">
+                    <label for="to-currency">To</label>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/PK/flat/64.png" alt="Selected target currency flag">
+                        <select name="to" id="to-currency" aria-label="Currency to convert to"></select>
+                    </div>
                 </div>
             </div>
 
-           <i class="fa-solid fa-arrow-right-arrow-left"></i>
-           
-            <div class="to">
-                <p>To: </p>
-                <div class="select-container">
-                    <img src="https://flagsapi.com/PK/flat/64.png" alt="">
-                    <select name="to" id="">
-                       
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="msg">1 USD = 277 PKR</div>
-        <button class="convert">Convert</button>
-    </form>
-        
+            <p class="msg" aria-live="polite">Enter an amount and choose currencies.</p>
+            <button type="submit" class="convert">Convert</button>
+        </form>
+    </main>
 
-   </div>
-
-
-
-  
     <script src="codes.js"></script>
     <script src="app.js"></script>
 </body>
