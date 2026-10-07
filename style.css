@@ -1,115 +1,169 @@
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
+body {
+    font-family: Arial, Helvetica, sans-serif;
     background-color: wheat;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 1rem;
 }
 
-.Container{
-    background-color: #59344F;
+.container {
+    background-color: #59344f;
     padding: 2rem;
-    border-radius: 2rem;
-    min-height:45vh;
-    width: 50vh;
-
+    border-radius: 1.5rem;
+    width: min(100%, 430px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
 }
 
-form{
-    margin:2rem 0 1rem 0;
-} 
+h1 {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+form {
+    margin-top: 2rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
 
 form select,
 form input,
-form button{
-    width: 100%;
+form button {
     border: none;
     outline: none;
     border-radius: 0.75rem;
 }
 
-form input{
-    margin-right: 1rem;
-    border : 1px solid #fff;
+form input {
+    width: 100%;
+    border: 1px solid #fff;
     font-size: 1rem;
-    height:2.5rem;
-    padding-left: 1.5rem;
-        box-sizing: border-box;
-    background-color: #59344F;
+    height: 2.75rem;
+    padding: 0 1rem;
+    background-color: #59344f;
     color: #fff;
 }
 
+form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
 
-.dropdown{
+.dropdown {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    gap: 0.75rem;
     margin-top: 2rem;
-
 }
 
-.select-container img{
-    max-width: 2rem;
-}
-
-.select-container{
-    display: flex;
-    width: 8rem;
-    align-items: center;
-    justify-content: center;
-    border-radius:0.5rem;
-    border: 1px solid #fff;
-
-}
-
-.dropdown i{
-    font-size: 1.5rem;
-    color: #fff;
-    margin-top: 1rem;
-}
-
-.select-container select{
+.from,
+.to {
     flex: 1;
     min-width: 0;
-    width: auto;
-    height: 2.5rem;
-    border: none;
-    outline: none;
+}
+
+.select-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #fff;
+    overflow: hidden;
+}
+
+.select-container img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    margin-left: 0.4rem;
+}
+
+.select-container select {
+    flex: 1;
+    min-width: 0;
+    height: 2.75rem;
     background-color: transparent;
+    color: #fff;
     font-size: 1rem;
-    padding-left: 0.5rem;
+    padding: 0 0.4rem;
 }
 
-.select-container select option{
-    background-color: #59344F;
+.select-container select option {
+    background-color: #59344f;
     color: #fff;
 }
 
-.msg{
-    text-align: center;
-    font-size: 1.2rem;
-    color: white;
-    margin: 2rem 0 2rem 0;
-}
-
-form button{
-    background-color: #857E7B;
+.swap-btn {
+    flex: 0 0 auto;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: transparent;
     color: #fff;
-    font-size: 1.2rem;
-    height: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.6);
     cursor: pointer;
+    transition: 0.2s ease;
 }
 
-form button:hover{
-    background-color: #fff ;
-    color: #59344F;
+.swap-btn:hover,
+.swap-btn:focus-visible {
+    background-color: #fff;
+    color: #59344f;
 }
 
+.msg {
+    min-height: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    margin: 2rem 0;
+}
+
+.convert {
+    width: 100%;
+    background-color: #857e7b;
+    color: #fff;
+    font-size: 1.1rem;
+    min-height: 2.75rem;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.convert:hover,
+.convert:focus-visible {
+    background-color: #fff;
+    color: #59344f;
+}
+
+.convert:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+@media (max-width: 420px) {
+    .container {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .dropdown {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .swap-btn {
+        align-self: center;
+        transform: rotate(90deg);
+    }
+}
